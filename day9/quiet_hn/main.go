@@ -28,8 +28,8 @@ func main() {
 	http.HandleFunc("/", handler(numStories, tpl))
 
 	// Start the server
+	fmt.Println("Listening on port:", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), nil))
-	print(port)
 }
 
 func handler(numStories int, tpl *template.Template) http.HandlerFunc {
